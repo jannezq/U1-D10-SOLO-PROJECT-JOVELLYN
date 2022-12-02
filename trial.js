@@ -1,40 +1,4 @@
 
-/* EXERCISE 8
-
-Write a function called rollTheDices which receives a number as a parameter.
-
-It should use the dice() function defined in Ex1 the specified amount of times,
-
-and return an object containing a sum property holding the sum of all values extracted
-
-and a values array containing the single values of the dicerolls themselves.
-
-Example: RollTheDices(3) => returns {
-
-sum: 10
-
-values: [3, 3, 4]
-
-}*/
-
-// function dice(diceNum){
-//     let min = 1;
-//     let max = 7;
-//     let diceRoll= [];
-//     for (let i = 1; i <= diceNum; i++) {
-//        diceRoll.push(Math.floor(Math.random() * (max-min)+min));
-//     }
-//     return diceRoll;
-// }
-// console.log(dice(5));
-
-// function rollTheDices(sumDice){
-    
-//     let sum = 
-    
-
-// };
-
 const movies = [
 
     {
@@ -262,11 +226,27 @@ const movies = [
     },
 
     ];
-    function oldestMovie(oldestFilm){
-          
-            oldestFilm = Math.min(... movies[0].Year);
-            return oldestFilm;
-        
-    }
+   
+
+
+function onlyTheTitles(movie){
+    let onlyTitles = [];
+    let index = 0;
     
-    console.log(oldestMovie(movies));
+    while (index < movies.length) {
+        let movie = movies[index];
+        for (let i = 0; i < movie.length; i++) {
+        onlyTitles.push(movie[i].Title);
+        }
+        index++; 
+    }
+   return movie;
+}
+
+console.log(onlyTheTitles(movies));
+
+let random = Math.floor((Math.random() * 10) + 1);
+    
+
+console.log("Random number", random);
+    

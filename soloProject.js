@@ -45,13 +45,7 @@ Create a variable called random and assign to it a random number between 0 and 2
 
 */
 
-
-for (let i = 0; i < random; i++) {
-    let random = [];
-    random.push(Math.floor(Math.random() * 21));
-    return random;
-    
-}
+let random = Math.floor((Math.random() * 10) + 1);
 
 console.log("Random number", random);
 
@@ -260,6 +254,28 @@ values: [3, 3, 4]
 
 */
 
+function dice(diceNum) {
+    let max = 1;
+    let min = 7;
+    let diceRoll = [];
+    for (let i = 1; i <= diceNum; i++) {
+        diceRoll.push(Math.floor(Math.random() * (max - min) + min));
+
+    }
+    return diceRoll;
+}
+
+function RollTheDices(newNumber) {
+    let diceResult = dice(newNumber);
+    let startPoint = 0;
+    let sumOfAllValues = diceResult.reduce((totalSum, currentNumber) =>
+        totalSum + currentNumber, startPoint);
+    console.log("Values: " + diceResult);
+    return "Sum: " + sumOfAllValues;
+}
+
+console.log(RollTheDices(5));
+
 /* EXERCISE 9
 
 Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
@@ -288,18 +304,18 @@ console.log(howManyDays("2/1/2021", "2/12/2021"));
 Write a function called isTodayMyBirthday which should return true if today’s your birthday, false otherwise.
 
 */
-// let todayDate = new Date();
-// function whatDateIsIt(day){
-//     day = todayDate.getDate();
-//   console.log("Today is : " + day + ".");
-// };
+function isTodayYourBirthday(birthDate) {
+    let today = new Date();
+    let birthday = new Date(birthDate);
+    if (today.getDate() == birthday.getDate()) {
+        console.log("True! Happy birthday!");
+    }
+    else {
+        console.log("False! Not your birthday.");
+    }
+}
 
-// function isTodayMyBirthday(dateEntry){
-//     let entryDate = new Date(dateEntry);
-//     if(entryDate == true){
-
-//     }
-// }
+console.log(isTodayYourBirthday("June 26 , 1996"));
 
 // JS Arrays & Objects
 
@@ -326,133 +342,7 @@ and returns the given object after deleting its property named as the given stri
 // }
 
 
-/* EXERCISE 12
-
-Write a function called oldestMovie which finds the oldest movie in the provided movies array.
-
-*/
-
-
-function oldestMovie(oldestFilm){
-    for (let i = 0; i < oldestFilm.length; i++) {
-        let filmYear = movies[0].Year;
-        oldestFilm = Math.min(... filmYear);
-        return oldestFilm;
-    }
-}
-
-console.log(oldestMovie(movies));
-
-
-/* EXERCISE 13
-
-Write a function called countMovies which returns the number of movies contained in the provided movies array.
-
-*/
-
-let totalMovies = movies.length;
-function countMovies(moviesEntry){
-    moviesEntry = totalMovies;
-    return moviesEntry;
-}
-
-console.log(countMovies(movies));
-
-
-/* EXERCISE 14
-
-Write a function called onlyTheTitles which creates an array with just the titles of the movies contained in the provided movies array.
-
-*/
-
-/* EXERCISE 15
-
-Write a function called onlyInThisMillennium which returns only the movies produced in this millennium from the provided movies array.
-
-*/
-
-/* EXERCISE 16
-
-Write a function called getMovieById which receives an id as a parameter and returns the movie with the given id from the provided movies array.
-
-*/
-
-/* EXERCISE 17
-
-Write a function called sumAllTheYears which returns the sum of all the years in which the movies in the provided movies array have been produced.
-
-*/
-
-/* EXERCISE 18
-
-Write a function called searchByTitle which receives a string as a parameter and returns all the movies in the provided movies array which contain that string in the title.
-
-*/
-
-/* EXERCISE 19
-
-Write a function called searchAndDivide which receives a string as a parameter and returns an object;
-
-this object should contain an array called match, made by all the movies from the provided movies array which contain the given string in the title,
-
-and another array unmatch with all the remaining ones.
-
-*/
-
-/* EXERCISE 20
-
-Write a function called "removeIndex" which receives a number as a parameter and returns the provided movies array without the element in the given position.
-
-*/
-
-// [EXTRAS] JS Advanced
-
-/* EXERCISE 21
-
-Create a function called "halfTree" which receives a number as a parameter and builds an "*" half tree with the given height.
-
-Example:
-
-halfTree(3)
-
-*
-
-**
-
-***
-
-*/
-
-/* EXERCISE 22
-
-Create a function called "tree" which receives a number as a parameter and builds an "*" tree with the given height.
-
-Example:
-
-tree(3)
-
-*
-
-***
-
-*****
-
-*/
-
-/* EXERCISE 23
-
-Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
-
-*/
-
-/* WHEN YOU ARE FINISHED
-
-Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today’s Eduflow.
-
-*/
-
-/* This movies array is used throughout the exercises. You’re not supposed to alter it. */
-
+// movies array
 const movies = [
 
     {
@@ -680,3 +570,144 @@ const movies = [
     },
 
     ];
+
+/* EXERCISE 12
+
+Write a function called oldestMovie which finds the oldest movie in the provided movies array.
+
+*/
+
+
+// function oldestMovie(oldestFilm){
+//     for (let i = 0; i < oldestFilm.length; i++) {
+//         let filmYear = movies[i].Year;
+//         oldestFilm = Math.min(... filmYear);
+//         return oldestFilm;
+//     }
+// }
+
+// console.log(oldestMovie(movies));
+
+
+/* EXERCISE 13
+
+Write a function called countMovies which returns the number of movies contained in the provided movies array.
+
+*/
+
+let totalMovies = movies.length;
+function countMovies(moviesEntry){
+    moviesEntry = totalMovies;
+    return moviesEntry;
+}
+
+console.log(countMovies(movies));
+
+
+/* EXERCISE 14
+
+Write a function called onlyTheTitles which creates an array with just the titles of the movies contained in the provided movies array.
+
+*/
+
+function onlyTheTitles(movie){
+    let onlyTitles = [];
+    let index = 0;
+    
+    while (index < movies.length) {
+        let movie = movies[index];
+        for (let i = 0; i < movie.length; i++) {
+        onlyTitles.push(movie[i].Title);
+        }
+        index++; 
+    }
+   return movie;
+}
+
+console.log(onlyTheTitles(movies));
+
+/* EXERCISE 15
+
+Write a function called onlyInThisMillennium which returns only the movies produced in this millennium from the provided movies array.
+
+*/
+
+/* EXERCISE 16
+
+Write a function called getMovieById which receives an id as a parameter and returns the movie with the given id from the provided movies array.
+
+*/
+
+/* EXERCISE 17
+
+Write a function called sumAllTheYears which returns the sum of all the years in which the movies in the provided movies array have been produced.
+
+*/
+
+/* EXERCISE 18
+
+Write a function called searchByTitle which receives a string as a parameter and returns all the movies in the provided movies array which contain that string in the title.
+
+*/
+
+/* EXERCISE 19
+
+Write a function called searchAndDivide which receives a string as a parameter and returns an object;
+
+this object should contain an array called match, made by all the movies from the provided movies array which contain the given string in the title,
+
+and another array unmatch with all the remaining ones.
+
+*/
+
+/* EXERCISE 20
+
+Write a function called "removeIndex" which receives a number as a parameter and returns the provided movies array without the element in the given position.
+
+*/
+
+// [EXTRAS] JS Advanced
+
+/* EXERCISE 21
+
+Create a function called "halfTree" which receives a number as a parameter and builds an "*" half tree with the given height.
+
+Example:
+
+halfTree(3)
+
+*
+
+**
+
+***
+
+*/
+
+/* EXERCISE 22
+
+Create a function called "tree" which receives a number as a parameter and builds an "*" tree with the given height.
+
+Example:
+
+tree(3)
+
+*
+
+***
+
+*****
+
+*/
+
+/* EXERCISE 23
+
+Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
+
+*/
+
+/* WHEN YOU ARE FINISHED
+
+Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today’s Eduflow.
+
+*/
