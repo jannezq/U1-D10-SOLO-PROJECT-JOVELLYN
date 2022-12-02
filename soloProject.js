@@ -176,7 +176,7 @@ If the boolean value is true it should return the string without the first lette
 
 function deleteOne(text, boolean){
 
-    if(boolean == true){
+    if(boolean){
     let removeLetterOne = text.slice(1);
     console.log(removeLetterOne);
     }
@@ -265,6 +265,7 @@ function dice(diceNum) {
     return diceRoll;
 }
 
+//forgot to put them into an array and object. 
 function RollTheDices(newNumber) {
     let diceResult = dice(newNumber);
     let startPoint = 0;
@@ -576,11 +577,12 @@ const movies = [
 Write a function called oldestMovie which finds the oldest movie in the provided movies array.
 
 */
-
+//use parseInt as a solution here
+ //let filmYear = movies[0].Year;
 
 // function oldestMovie(oldestFilm){
 //     for (let i = 0; i < oldestFilm.length; i++) {
-//         let filmYear = movies[i].Year;
+//        
 //         oldestFilm = Math.min(... filmYear);
 //         return oldestFilm;
 //     }
@@ -601,7 +603,7 @@ function countMovies(moviesEntry){
     return moviesEntry;
 }
 
-console.log(countMovies(movies));
+console.log(countMovies());
 
 
 /* EXERCISE 14
@@ -610,16 +612,16 @@ Write a function called onlyTheTitles which creates an array with just the title
 
 */
 
-function onlyTheTitles(movie){
+function onlyTheTitles(){
     let onlyTitles = [];
     for (let i = 0; i < movies.length; i++) {
         onlyTitles.push(movies[i].Title);
        }
-       movie = onlyTitles;
-       return movie;
+    
+       return onlyTitles;
 }
 
-console.log(onlyTheTitles())
+console.log(onlyTheTitles());
 
 
 /* EXERCISE 15
@@ -628,11 +630,25 @@ Write a function called onlyInThisMillennium which returns only the movies produ
 
 */
 
+
+
 /* EXERCISE 16
 
 Write a function called getMovieById which receives an id as a parameter and returns the movie with the given id from the provided movies array.
 
 */
+function getMovieById(movieId){
+    for (let i = 0; i < movies.length; i++) {
+        if (movieId == movies[i].imdbID) {
+            console.log(movies[i]);
+        }
+    }
+    
+}
+
+getMovieById("tt4154796");
+
+
 
 /* EXERCISE 17
 

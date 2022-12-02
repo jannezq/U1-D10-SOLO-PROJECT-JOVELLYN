@@ -226,16 +226,52 @@ const movies = [
     },
 
     ];
-   
- function oldestMovie(oldestFilm){
-    for (let i = 0; i < movies.length; i++) {
-        let filmYear = movies[0].Year;
-       oldestFilm = Math.min(... filmYear);
-       return oldestFilm;
-    }
- }
-
-console.log(oldestMovie())
- 
-
     
+    /* EXERCISE 12
+
+Write a function called oldestMovie which finds the oldest movie in the provided movies array.
+
+*/
+
+// let filmYear = movies[0].Year;
+
+// function oldestMovie(){
+//     for (let i = 0; i < movies.length; i++) {
+        
+
+//    }
+//  }
+
+// console.log(oldestMovie());
+
+
+/* EXERCISE 18
+
+Write a function called searchByTitle which receives a string as a parameter and returns all the movies in the provided movies array which contain that string in the title.
+
+*/
+
+
+function getMovieById(movieId){
+    for (let i = 0; i < movies.length; i++) {
+        if (movieId == movies[i].imdbID) {
+            console.log(movies[i]);
+        }
+    }
+    
+}
+
+getMovieById("tt4154796");
+
+
+function searchByTitle(string){
+    let stringMovies = [];
+
+    for (let i = 0; i < movies.length; i++) {
+        stringMovies.push(movies[i].Title.includes(string));
+        console.log(stringMovies);
+    }
+
+}
+
+searchByTitle("Lord");
