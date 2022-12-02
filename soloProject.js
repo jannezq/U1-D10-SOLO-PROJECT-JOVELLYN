@@ -30,6 +30,13 @@ let test = "Jovellyn Quiapos"
 Create a variable called sum and assign to it the result of the sum between the numbers 10 and 20.
 
 */
+let num1 = 10;
+let num2 = 20;
+let sum = num1 + num2
+
+let result = sum;
+
+console.log("Result of 10 + 20 is: ", result);
 
 
 /* EXERCISE C
@@ -37,6 +44,16 @@ Create a variable called sum and assign to it the result of the sum between the 
 Create a variable called random and assign to it a random number between 0 and 20 (it should be randomly created at each execution).
 
 */
+
+let random = [];
+for (let i = 0; i < random; i++) {
+  random.push(Math.floor(Math.random() * 21));
+    return random;
+    
+}
+
+
+console.log("Random number", random);
 
 /* EXERCISE D
 
@@ -103,9 +120,11 @@ Write a function called dice; it should randomize an integer number between 1 an
 */
 
 function dice(diceNum){
+    let min = 1;
+    let max = 7;
     let diceRoll= [];
     for (let i = 1; i <= diceNum; i++) {
-       diceRoll.push(Math.floor(Math.random() *7));
+       diceRoll.push(Math.floor(Math.random() * (max-min)+min));
     }
     return diceRoll;
 }
@@ -121,7 +140,15 @@ Write a function called whoIsBigger which receives 2 numbers as parameters and r
 //input 2 numbers , num1 & num2
 // output = biggest number
 
+function whoIsBigger(num1, num2){
+    if (num1 < num2) {
+        console.log("Number 2: ", num2,  "is bigger than number 1: ",num1);
+    } else {
+        console.log("Number 1: ", num1, "is bigger than number 2: ", num2);
+    }
+};
 
+whoIsBigger(12,32);
 
 /* EXERCISE 3
 
@@ -131,6 +158,20 @@ Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
 
 */
 
+
+// string
+// output = array of the strings inputed
+
+let enteredString = ["Hello name is Jovellyn Quiapos"];
+
+function splitMe(stringText){
+   return stringText.split(" ");
+}
+
+let newSplit = splitMe(enteredString[0]);
+
+console.log(newSplit);
+
 /* EXERCISE 4
 
 Write a function called deleteOne which receives a string and a boolean as parameters.
@@ -138,6 +179,19 @@ Write a function called deleteOne which receives a string and a boolean as param
 If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 
 */
+
+function deleteOne(text, boolean){
+
+    if(boolean == true){
+    let removeLetterOne = text.slice(1);
+    console.log(removeLetterOne);
+    }
+    else{
+        let removeLetterOne = text.slice(0,-1);
+        console.log(removeLetterOne);
+    }
+    }
+    deleteOne("JavaScript", false);
 
 /* EXERCISE 5
 
@@ -147,17 +201,44 @@ Ex.: onlyLetters("I have 4 dogs") => returns "I have dogs"
 
 */
 
+function onlyLetters(entrySentence){
+    let noNums = [];
+    noNums = entrySentence.replace(/[0-9]/g, '');
+    return noNums;
+}
+
+console.log(onlyLetters("I am 26 yrs, born in 1996"));
+
+
 /* EXERCISE 6
 
 Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
 
 */
 
+function isThisAnEmail(entryEmail){
+    let validateEmail = /^[a-zA-Z]+[a-zA-Z0-9_.]+@[a-zA-Z.]+[a-zA-Z]$/;
+    return validateEmail.test(entryEmail);
+}
+
+console.log(isThisAnEmail("jovellyn@gmail.com"));
+console.log(isThisAnEmail("jovellynquiaposgmailcom"))
+
 /* EXERCISE 7
 
 Write a function called whatDayIsIt that should return the current day of the week.
 
 */
+console.log(whatDayIsIt);
+
+let today = new Date();
+function whatDayIsIt(day){
+    day = today.getDay();
+    let daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+  console.log("Today is : " + daylist[day] + ".");
+};
+
+whatDayIsIt(1);
 
 /* EXERCISE 8
 
