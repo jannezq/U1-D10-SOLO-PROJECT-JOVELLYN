@@ -45,13 +45,13 @@ Create a variable called random and assign to it a random number between 0 and 2
 
 */
 
-let random = [];
+
 for (let i = 0; i < random; i++) {
-  random.push(Math.floor(Math.random() * 21));
+    let random = [];
+    random.push(Math.floor(Math.random() * 21));
     return random;
     
 }
-
 
 console.log("Random number", random);
 
@@ -229,7 +229,7 @@ console.log(isThisAnEmail("jovellynquiaposgmailcom"))
 Write a function called whatDayIsIt that should return the current day of the week.
 
 */
-console.log(whatDayIsIt);
+
 
 let today = new Date();
 function whatDayIsIt(day){
@@ -263,14 +263,43 @@ values: [3, 3, 4]
 /* EXERCISE 9
 
 Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
-
 */
+
+function howManyDays(start, end) {
+    let date1 = new Date(start);
+    let date2 = new Date(end);
+
+    // One day in milliseconds
+    let oneDay = 1000 * 60 * 60 * 24;
+
+    // Calculating the time difference between two dates
+    let diffInTime = date2.getTime() - date1.getTime();
+
+    // Calculating the no. of days between two dates
+    let diffInDays = Math.round(diffInTime / oneDay);
+
+    return diffInDays;
+}
+
+console.log(howManyDays("2/1/2021", "2/12/2021"));
 
 /* EXERCISE 10
 
 Write a function called isTodayMyBirthday which should return true if today’s your birthday, false otherwise.
 
 */
+// let todayDate = new Date();
+// function whatDateIsIt(day){
+//     day = todayDate.getDate();
+//   console.log("Today is : " + day + ".");
+// };
+
+// function isTodayMyBirthday(dateEntry){
+//     let entryDate = new Date(dateEntry);
+//     if(entryDate == true){
+
+//     }
+// }
 
 // JS Arrays & Objects
 
@@ -284,17 +313,51 @@ and returns the given object after deleting its property named as the given stri
 
 */
 
+
+// function deleteProp(objectList , driverLicense){
+//      let objectList = {
+//         name: "jovellyn",
+//         surname: "quiapos",
+//         age: 26,
+//         driverLicense: false
+//     };
+//     delete objectList.driverLicense;
+//     return objectList;
+// }
+
+
 /* EXERCISE 12
 
 Write a function called oldestMovie which finds the oldest movie in the provided movies array.
 
 */
 
+
+function oldestMovie(oldestFilm){
+    for (let i = 0; i < oldestFilm.length; i++) {
+        let filmYear = movies[0].Year;
+        oldestFilm = Math.min(... filmYear);
+        return oldestFilm;
+    }
+}
+
+console.log(oldestMovie(movies));
+
+
 /* EXERCISE 13
 
 Write a function called countMovies which returns the number of movies contained in the provided movies array.
 
 */
+
+let totalMovies = movies.length;
+function countMovies(moviesEntry){
+    moviesEntry = totalMovies;
+    return moviesEntry;
+}
+
+console.log(countMovies(movies));
+
 
 /* EXERCISE 14
 

@@ -1,79 +1,272 @@
-/* EXERCISE 4
 
-Write a function called deleteOne which receives a string and a boolean as parameters.
+/* EXERCISE 8
 
-If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
+Write a function called rollTheDices which receives a number as a parameter.
 
-*/
+It should use the dice() function defined in Ex1 the specified amount of times,
 
-// string & boolean
-// output = 
-// 1) if true, return string without first letter
-// ) if false returns string without last letter
+and return an object containing a sum property holding the sum of all values extracted
 
+and a values array containing the single values of the dicerolls themselves.
 
-// function deleteOne(entry){
-//     let without1 = entry.slice(1);
-//     if (without1 == true) {
-//      let entryNoFirst = without1.slice(1);
-//        console.log(entryNoFirst);
-//     } 
+Example: RollTheDices(3) => returns {
+
+sum: 10
+
+values: [3, 3, 4]
+
+}*/
+
+// function dice(diceNum){
+//     let min = 1;
+//     let max = 7;
+//     let diceRoll= [];
+//     for (let i = 1; i <= diceNum; i++) {
+//        diceRoll.push(Math.floor(Math.random() * (max-min)+min));
+//     }
+//     return diceRoll;
+// }
+// console.log(dice(5));
+
+// function rollTheDices(sumDice){
+    
+//     let sum = 
+    
+
 // };
 
-// console.log(deleteOne("true"));
+const movies = [
 
+    {
 
+    Title: "The Lord of the Rings: The Fellowship of the Ring",
 
-// let str = 'false';
+    Year: "2001",
 
-// let withoutFirst = str.slice(1);
-// if (withoutFirst.startsWith("true") === true) {
-//     let entryNoFirst = withoutFirst.slice(1);
-//       console.log(entryNoFirst);
-//    } 
-// console.log(withoutFirst); // 👉️ ello world
+    imdbID: "tt0120737",
 
-// let day = new Date();
-// function whatDayIsIt(day){
-//     let today = day.getDay();
-//     return today;
-// }
+    Type: "movie",
 
-function dice(diceNum){
-    let min = 1;
-    let max = 7;
-    let diceRoll= [];
-    for (let i = 1; i <= diceNum; i++) {
-       diceRoll.push(Math.floor(Math.random() * (max-min)+min));
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
+
+    },
+
+    {
+
+    Title: "The Lord of the Rings: The Return of the King",
+
+    Year: "2003",
+
+    imdbID: "tt0167260",
+
+    Type: "movie",
+
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+
+    },
+
+    {
+
+    Title: "The Lord of the Rings: The Two Towers",
+
+    Year: "2002",
+
+    imdbID: "tt0167261",
+
+    Type: "movie",
+
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BNGE5MzIyNTAtNWFlMC00NDA2LWJiMjItMjc4Yjg1OWM5NzhhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+
+    },
+
+    {
+
+    Title: "Lord of War",
+
+    Year: "2005",
+
+    imdbID: "tt0399295",
+
+    Type: "movie",
+
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BMTYzZWE3MDAtZjZkMi00MzhlLTlhZDUtNmI2Zjg3OWVlZWI0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+
+    },
+
+    {
+
+    Title: "Lords of Dogtown",
+
+    Year: "2005",
+
+    imdbID: "tt0355702",
+
+    Type: "movie",
+
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BNDBhNGJlOTAtM2ExNi00NmEzLWFmZTQtYTZhYTRlNjJjODhmXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+
+    },
+
+    {
+
+    Title: "The Lord of the Rings",
+
+    Year: "1978",
+
+    imdbID: "tt0077869",
+
+    Type: "movie",
+
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BOGMyNWJhZmYtNGQxYi00Y2ZjLWJmNjktNTgzZWJjOTg4YjM3L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+
+    },
+
+    {
+
+    Title: "Lord of the Flies",
+
+    Year: "1990",
+
+    imdbID: "tt0100054",
+
+    Type: "movie",
+
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BOTI2NTQyODk0M15BMl5BanBnXkFtZTcwNTQ3NDk0NA@@._V1_SX300.jpg",
+
+    },
+
+    {
+
+    Title: "The Lords of Salem",
+
+    Year: "2012",
+
+    imdbID: "tt1731697",
+
+    Type: "movie",
+
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BMjA2NTc5Njc4MV5BMl5BanBnXkFtZTcwNTYzMTcwOQ@@._V1_SX300.jpg",
+
+    },
+
+    {
+
+    Title: "Greystoke: The Legend of Tarzan, Lord of the Apes",
+
+    Year: "1984",
+
+    imdbID: "tt0087365",
+
+    Type: "movie",
+
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BMTM5MzcwOTg4MF5BMl5BanBnXkFtZTgwOTQwMzQxMDE@._V1_SX300.jpg",
+
+    },
+
+    {
+
+    Title: "Lord of the Flies",
+
+    Year: "1963",
+
+    imdbID: "tt0057261",
+
+    Type: "movie",
+
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BOGEwYTlhMTgtODBlNC00ZjgzLTk1ZmEtNmNkMTEwYTZiM2Y0XkEyXkFqcGdeQXVyMzU4Nzk4MDI@._V1_SX300.jpg",
+
+    },
+
+    {
+
+    Title: "The Avengers",
+
+    Year: "2012",
+
+    imdbID: "tt0848228",
+
+    Type: "movie",
+
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+
+    },
+
+    {
+
+    Title: "Avengers: Infinity War",
+
+    Year: "2018",
+
+    imdbID: "tt4154756",
+
+    Type: "movie",
+
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+
+    },
+
+    {
+
+    Title: "Avengers: Age of Ultron",
+
+    Year: "2015",
+
+    imdbID: "tt2395427",
+
+    Type: "movie",
+
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg",
+
+    },
+
+    {
+
+    Title: "Avengers: Endgame",
+
+    Year: "2019",
+
+    imdbID: "tt4154796",
+
+    Type: "movie",
+
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
+
+    },
+
+    ];
+    function oldestMovie(oldestFilm){
+          
+            oldestFilm = Math.min(... movies[0].Year);
+            return oldestFilm;
+        
     }
-    return diceRoll;
-}
-console.log(dice(1));
-
-
-function crazySum(num1, num2){
-    if (num1 === num2) {
-        let totalSum3 = (num1 + num2) * 3;
-        console.log("Values are the same and so they are multiplied by 3: ", totalSum3);
-        return totalSum3;
-    } else {
-        let totalNum1 = num1 + num2;
-        console.log("Total sum of the two values are: ", totalNum1);
-       return totalNum1;
-    }
-}
-
-crazySum(44, 21);
-
-let num1 = 10;
-let num2 = 20;
-let sum = num1 + num2
-
-let result = sum;
-
-console.log("Result of 10 + 20 is: ", result);
-
-let random = [];
-random.push(Math.floor(Math.random() * 21));
-
-console.log("Random number");
+    
+    console.log(oldestMovie(movies));
