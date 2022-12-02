@@ -228,25 +228,17 @@ const movies = [
     ];
    
 
-
-function onlyTheTitles(movie){
-    let onlyTitles = [];
-    let index = 0;
     
-    while (index < movies.length) {
-        let movie = movies[index];
-        for (let i = 0; i < movie.length; i++) {
-        onlyTitles.push(movie[i].Title);
-        }
-        index++; 
+    function onlyTheTitles(movie){
+        let onlyTitles = [];
+        for (let i = 0; i < movies.length; i++) {
+            onlyTitles.push(movies[i].Title);
+           }
+           movie = onlyTitles;
+           return movie;
     }
-   return movie;
-}
-
-console.log(onlyTheTitles(movies));
-
-let random = Math.floor((Math.random() * 10) + 1);
     
+    console.log(onlyTheTitles())
+ 
 
-console.log("Random number", random);
     

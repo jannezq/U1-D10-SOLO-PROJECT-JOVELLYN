@@ -612,19 +612,15 @@ Write a function called onlyTheTitles which creates an array with just the title
 
 function onlyTheTitles(movie){
     let onlyTitles = [];
-    let index = 0;
-    
-    while (index < movies.length) {
-        let movie = movies[index];
-        for (let i = 0; i < movie.length; i++) {
-        onlyTitles.push(movie[i].Title);
-        }
-        index++; 
-    }
-   return movie;
+    for (let i = 0; i < movies.length; i++) {
+        onlyTitles.push(movies[i].Title);
+       }
+       movie = onlyTitles;
+       return movie;
 }
 
-console.log(onlyTheTitles(movies));
+console.log(onlyTheTitles())
+
 
 /* EXERCISE 15
 
