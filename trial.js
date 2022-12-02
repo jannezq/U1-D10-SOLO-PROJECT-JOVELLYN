@@ -227,18 +227,15 @@ const movies = [
 
     ];
    
-
-    
-    function onlyTheTitles(movie){
-        let onlyTitles = [];
-        for (let i = 0; i < movies.length; i++) {
-            onlyTitles.push(movies[i].Title);
-           }
-           movie = onlyTitles;
-           return movie;
+ function oldestMovie(oldestFilm){
+    for (let i = 0; i < movies.length; i++) {
+        let filmYear = movies[0].Year;
+       oldestFilm = Math.min(... filmYear);
+       return oldestFilm;
     }
-    
-    console.log(onlyTheTitles())
+ }
+
+console.log(oldestMovie())
  
 
     
