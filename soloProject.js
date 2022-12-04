@@ -327,7 +327,7 @@ and returns the given object after deleting its property named as the given stri
 
 */
 
-function deleteProp(objectList, driverLicense) {
+/*function deleteProp(objectList, driverLicense) {
   let objectList = {
     name: "jovellyn",
     surname: "quiapos",
@@ -336,7 +336,7 @@ function deleteProp(objectList, driverLicense) {
   };
   delete objectList.driverLicense;
   return objectList;
-}
+}*/
 
 // movies array
 const movies = [
@@ -528,18 +528,17 @@ const movies = [
 Write a function called oldestMovie which finds the oldest movie in the provided movies array.
 
 */
-//use parseInt as a solution here
-//let filmYear = movies[0].Year;
+function oldestMovie() {
+  let movieYears = [];
+  let movieYearsorted;
+  for (let i = 0; i < movies.length; i++) {
+    movieYears.push(movies[i].Year);
+  }
+  movieYearsorted = movieYears.sort();
+  return movieYearsorted[0];
+}
 
-// function oldestMovie(oldestFilm){
-//     for (let i = 0; i < oldestFilm.length; i++) {
-//
-//         oldestFilm = Math.min(... filmYear);
-//         return oldestFilm;
-//     }
-// }
-
-// console.log(oldestMovie(movies));
+console.log(oldestMovie());
 
 /* EXERCISE 13
 

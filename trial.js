@@ -188,26 +188,30 @@ Write a function called oldestMovie which finds the oldest movie in the provided
 
 */
 
-// let filmYear = movies[0].Year;
-
-// function oldestMovie(){
-//     for (let i = 0; i < movies.length; i++) {
-
-//    }
-//  }
-
-// console.log(oldestMovie());
-
-/* EXERCISE 18
-
-Write a function called searchByTitle which receives a string as a parameter and returns all the movies in the provided movies array which contain that string in the title.
-
-*/
-
-function searchByTitle(movieName) {
-  let movieTitles = onlyTheTitles();
-  let hasName = movieTitles.filter((Title) => Title.includes(movieName));
-  console.log(hasName);
+//Returns the oldest year available in the array
+/*function oldestMovie() {
+  let movieYears = [];
+  let movieYearsorted;
+  for (let i = 0; i < movies.length; i++) {
+    movieYears.push(movies[i].Year);
+  }
+  movieYearsorted = movieYears.sort();
+  return movieYearsorted[0];
 }
 
-searchByTitle("Rings");
+console.log(oldestMovie());*/
+
+//Returns the oldest movie in the array
+function oldestMovie() {
+  //let oldDate = Math.min(movieDate);
+  let movieDate;
+  let intMovies = parseInt(movies);
+  for (let i = 0; i < intMovies.length; i++) {
+    if (Math.max(movies) < Math.min(movies)) {
+      movieDate = parseInt(movies[i].Year);
+    }
+  }
+  return movieDate;
+}
+
+console.log(oldestMovie());
